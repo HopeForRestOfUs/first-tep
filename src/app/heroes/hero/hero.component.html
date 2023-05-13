@@ -1,0 +1,27 @@
+<h1>{{ name }}</h1>
+
+
+<dl> 
+    <td>Nombre: </td>
+    <dd>    {{ name }}</dd>
+
+    <td>Edad: </td>
+    <dd>    {{ age }}</dd>
+
+    <td>Metodo: </td>
+    <dd>    {{ heroDescription() }}</dd>
+
+    <td>Capitalizado: </td>
+    <dd>    {{ CapitalizedName() }}</dd>
+</dl>
+
+<button
+    *ngIf="name !== 'Hulk'"
+    (click)="changeName('Hulk')" class="btn btn-primary m-1">Cambiar Nombre</button>
+<button 
+    *ngIf="age === 45"
+    (click)="chancheAge(18)" class="btn btn-primary m-1">Cambiar Edad</button>
+
+    <button
+        *ngIf="name === 'Hulk' || age === 18" 
+        (click)="ResetForm()" class="btn btn-danger m-1">Reset Form</button>
